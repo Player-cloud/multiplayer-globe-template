@@ -1,27 +1,42 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
-    />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Globe</title>
-    <!-- Favicon -->
-    <link rel="icon" href="/favicon.ico" sizes="any" />
-    <!-- Primary Meta Tags -->
-    <meta name="title" content="PartyServer" />
-    <meta name="description" content="Everything's better with friends!" />
-    <meta name="author" content="PartyServer" />
-    <!-- Theme Colour -->
-    <meta name="theme-color" content="#ffffff" />
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Global Sentiment Pulse</title>
+<style>
+  body, html { margin: 0; height: 100%; overflow: hidden; font-family: Arial, sans-serif; }
+  #globeViz { width: 100vw; height: 100vh; }
+  #poll-ui {
+    position: absolute; top: 20px; left: 20px;
+    background: rgba(255,255,255,0.9);
+    padding: 10px; border-radius: 8px;
+    width: 220px;
+  }
+  #results { margin-top: 10px; }
+  button { margin: 4px; }
+</style>
+</head>
+<body>
 
-    <link rel="stylesheet" href="/normalize.css" />
-    <link rel="stylesheet" href="/dist/index.css" />
-  </head>
-  <body>
-    <div id="root">Loading...</div>
-    <script type="module" src="/dist/index.js"></script>
-  </body>
+<div id="globeViz"></div>
+
+<div id="poll-ui">
+  <h3>How do you feel about this event?</h3>
+  <button data-vote="yes">👍 Yes</button>
+  <button data-vote="no">👎 No</button>
+  <button data-vote="neutral">😐 Neutral</button>
+
+  <div id="results">
+    <p>Yes: <span id="count-yes">0</span></p>
+    <p>No: <span id="count-no">0</span></p>
+    <p>Neutral: <span id="count-neutral">0</span></p>
+  </div>
+</div>
+
+<script src="https://unpkg.com/three@0.147.0/build/three.min.js"></script>
+<script src="https://unpkg.com/globe.gl"></script>
+<script src="./app.js"></script>
+
+</body>
 </html>

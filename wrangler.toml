@@ -1,0 +1,9 @@
+name = "global-sentiment-pulse"
+main = "src/handler.js"
+compatibility_date = "2025-06-01"
+
+[vars]
+# Add any environment variables here
+
+[build]
+command = "npm run build"
